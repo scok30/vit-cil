@@ -8,7 +8,7 @@
 * Training on CIFAR-100 dataset:
 
 ```
-$ python main.py
+$ bash r.sh
 ```
 
 ## Environment
