@@ -26,5 +26,27 @@
     "num_workers" : 8,
     "is_task0": false,
     "log_dir": "logs",
-    "log_name": "second_stage"
+    "log_name": "second_stage",
+    "config": {
+        "img_size": 32,
+        "patch_size": 4,
+        "in_chans": 3,
+        "num_classes": 100,
+        "embed_dim": 384,
+        "depth": 6,
+        "num_heads": 12,
+        "mlp_ratio": 4.0,
+        "qkv_bias": false,
+        "qk_scale": null,
+        "drop_rate": 0.0,
+        "attn_drop_rate": 0.0,
+        "drop_path_rate": 0.1,
+        "hybrid_backbone": null,
+        "norm_layer": "layer",
+        "local_up_to_layer": 5,
+        "locality_strength": 1.0,
+        "use_pos_embed": true,
+        "class_attention": true,
+        "ca_type": "base"
+    }    
 }

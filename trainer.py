@@ -4,7 +4,6 @@ import copy
 import torch
 from utils import factory
 from utils.data_manager import DataManager
-from utils.toolkit import count_parameters
 import os
 import pdb
 import json
@@ -60,10 +59,6 @@ def _train(args):
     cnn_curve = {"top1": [], "top5": []}
 
     for task in range(data_manager.nb_tasks):
-        logging.info("All params: {}".format(count_parameters(model._network)))
-        logging.info(
-            "Trainable params: {}".format(count_parameters(model._network, True))
-        )
         model.incremental_train(data_manager)
         cnn_accy, nme_accy = model.eval_task()
 

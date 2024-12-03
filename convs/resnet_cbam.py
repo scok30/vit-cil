@@ -165,30 +165,8 @@ class ResNet(nn.Module):
             elif isinstance(m, nn.BatchNorm2d):
                 m.weight.data.fill_(1)
                 m.bias.data.zero_()
-
-        # guided convit
-        config = {
-            'img_size': 32,
-            'patch_size': 4,
-            'in_chans': 3,
-            'num_classes': 100,
-            'embed_dim': 384,
-            'depth': 6,
-            'num_heads': 12,
-            'mlp_ratio': 4.0,
-            'qkv_bias': False,
-            'qk_scale': None,
-            'drop_rate': 0.0,
-            'attn_drop_rate': 0.0,
-            'drop_path_rate': 0.1,
-            'hybrid_backbone': None,
-            'norm_layer': 'layer',
-            'local_up_to_layer': 5,
-            'locality_strength': 1.0,
-            'use_pos_embed': True,
-            'class_attention': True,
-            'ca_type': 'base'
-        }
+        config = args['config']
+        # guided convit, plug into resnet to implement knowledge selection and prototype restoration
         self.convit = ConVit(**config)
         self.adapt_fc = nn.Conv2d(config['embed_dim'],512,1)
 
