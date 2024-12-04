@@ -10,7 +10,7 @@
 ```
 $ bash r.sh
 ```
-
+To train on other setting, please modify the config file under exps/ following r.sh
 ## Environment
 
 * Dependency libraries are listed in requirements.txt.
